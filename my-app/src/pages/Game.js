@@ -5,7 +5,6 @@ import {useParams} from "react-router-dom";
 
 export default function Game() {
     const {id} = useParams();
-    console.log(id);
     const [onegame, setonegame] = useState({});
 
     useEffect(() => {
@@ -18,7 +17,7 @@ export default function Game() {
         };
         fetchData3();
     }, []);
-    console.log(onegame.genres);
+    // console.log(onegame.genres);
     return (
         <div>
             {Object.entries(onegame).length && (

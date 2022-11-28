@@ -25,7 +25,6 @@ export default function Search({returnResult}) {
                 }
             });
         setSearchTerm("");
-        // console.log(gameResults);
         returnResult(gameResults);
     };
     return (

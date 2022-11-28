@@ -87,7 +87,6 @@ export default function Home() {
     }, []);
     const [gameResults, setGameResults] = useState([]);
     const returnResult = gameResult => {
-        console.log(gameResult);
         setGameResults(gameResult);
     };
 
