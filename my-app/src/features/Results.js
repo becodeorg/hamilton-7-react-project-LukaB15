@@ -3,7 +3,6 @@ import {Link} from "react-router-dom";
 // import Game from "../pages/Game";
 
 export default function Results(gameResults) {
-    console.log(gameResults.gameResults);
     return (
         <div className={"results-container"}>
             <ul>
@@ -11,8 +10,8 @@ export default function Results(gameResults) {
                     <li key={game.id}>
                         <Link
                             to={{
-                                pathname: `/Game/${game.name}`,
-                                state: game,
+                                pathname: `/Game/${game.id}`,
+                                state: game.id,
                                 gameProps: {
                                     game: game,
                                 },

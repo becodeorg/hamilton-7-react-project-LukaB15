@@ -28,7 +28,7 @@ function Nextweek({nxtweek}) {
                         <li key={game.id}>
                             <Link
                                 to={{
-                                    pathname: `/Game/${game.name}`,
+                                    pathname: `/Game/${game.id}`,
                                     gameProps: {
                                         game: game,
                                     },

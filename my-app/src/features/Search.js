@@ -44,7 +44,7 @@ export default function Search() {
             <Results gameResults={gameResults} />
             <Routes>
                 <Route
-                    path={"/Game/:name"}
+                    path={"/Game/:id"}
                     element={<Game authed={true} gameResults={gameResults} />}
                 />
             </Routes>
