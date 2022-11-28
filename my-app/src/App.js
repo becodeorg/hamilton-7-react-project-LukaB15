@@ -8,6 +8,8 @@ import "./App.css";
 import {Route, Routes} from "react-router";
 import Game from "./pages/Game";
 import Search from "./features/Search";
+import Nav from "./features/Nav";
+import Formfilter from "./features/Formfilter";
 
 function App() {
     function getNextMondaystart(date = new Date()) {
@@ -87,12 +89,34 @@ function App() {
         };
         fetchData3();
     }, []);
+
+    //All GAMES
+    const [allgames, setallgames] = useState([]);
+
+    useEffect(() => {
+        const fetchData4 = async () => {
+            const result = await axios(
+                `https://api.rawg.io/api/games?key=678cfdbc0bb64f1fa15d4409fc3d8131`,
+            );
+            // console.log(end);
+            // console.log(start);
+            const dataweek = result.data;
+            // console.log(result.data.results);
+            const games = dataweek.results;
+            setallgames(games);
+        };
+        fetchData4();
+    }, []);
     return (
         <>
+            <Nav />
             <Search />
             <Routes>
-                <Route path={"/Game/:name"} element={<Game />} />
-                {/* <Route path={"/Search"} element={<Search />} /> */}
+                <Route
+                    path={"/Game/:name"}
+                    element={<Game authed={true} allgames={allgames} />}
+                />
+                <Route path={"/Formfilter"} element={<Formfilter />} />
             </Routes>
             <Nextweek nxtweek={nxtweek} />
             <Newreleases data={data} />

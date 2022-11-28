@@ -1,5 +1,7 @@
 import React, {useState} from "react";
+import {Route, Routes} from "react-router";
 import Results from "./Results";
+import Game from "../pages/Game";
 
 export default function Search() {
     const [searchTerm, setSearchTerm] = useState("");
@@ -40,6 +42,12 @@ export default function Search() {
                 <input type={"submit"} onClick={onSubmit} />
             </form>
             <Results gameResults={gameResults} />
+            <Routes>
+                <Route
+                    path={"/Game/:name"}
+                    element={<Game authed={true} gameResults={gameResults} />}
+                />
+            </Routes>
         </div>
     );
 }

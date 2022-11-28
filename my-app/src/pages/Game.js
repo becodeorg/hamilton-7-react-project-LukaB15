@@ -1,9 +1,10 @@
 import React from "react";
 // import Results from "../features/Results";
 
-export default function Game(props) {
-    console.log(props);
-    const {game} = props.location.gameProps;
+export default function Game(allgames, gameResults) {
+    console.log(allgames);
+    console.log(gameResults);
+    const {game} = allgames.location.state;
     return (
         <div>
             <h1>{game.name}</h1>

@@ -8,8 +8,8 @@ export default function Nav() {
     return (
         <nav>
             <ul className={"nav-links"}>
-                <Link style={navStyle} to={"/Search"}>
-                    <li>Search</li>
+                <Link style={navStyle} to={"/Formfilter"}>
+                    <li>Recherche avancée</li>
                 </Link>
             </ul>
         </nav>
