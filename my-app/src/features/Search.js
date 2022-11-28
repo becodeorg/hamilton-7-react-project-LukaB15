@@ -1,9 +1,6 @@
 import React, {useState} from "react";
-import {Route, Routes} from "react-router";
-import Results from "./Results";
-import Game from "../pages/Game";
 
-export default function Search() {
+export default function Search({returnResult}) {
     const [searchTerm, setSearchTerm] = useState("");
     const [gameResults, setGameResults] = useState([]);
 
@@ -28,6 +25,8 @@ export default function Search() {
                 }
             });
         setSearchTerm("");
+        // console.log(gameResults);
+        returnResult(gameResults);
     };
     return (
         <div className={"game-search"}>
@@ -41,13 +40,6 @@ export default function Search() {
                 <br />
                 <input type={"submit"} onClick={onSubmit} />
             </form>
-            <Results gameResults={gameResults} />
-            <Routes>
-                <Route
-                    path={"/Game/:id"}
-                    element={<Game authed={true} gameResults={gameResults} />}
-                />
-            </Routes>
         </div>
     );
 }

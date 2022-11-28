@@ -6,7 +6,7 @@ import {useParams} from "react-router-dom";
 export default function Game() {
     const {id} = useParams();
     console.log(id);
-    const [onegame, setonegame] = useState([]);
+    const [onegame, setonegame] = useState({});
 
     useEffect(() => {
         const fetchData3 = async () => {
@@ -21,20 +21,17 @@ export default function Game() {
     console.log(onegame.genres);
     return (
         <div>
-            <h1>{onegame.name}</h1>
-            <p>released : {onegame.released}</p>
-            <p>Rating : {onegame.rating}</p>
-            {/* <h3>Genre(s):</h3>
-            {onegame.genres.map(g => `${g.name} | `)} */}
-            {/* <h3>Plateform(s) :</h3>
-            {onegame.platforms.map(p => `${p.platform.name} | `)}
-            <ul>
-                {onegame.short_screenshots.map(ss => (
-                    <li key={ss.id}>
-                        <img src={ss.image} alt={"screenshot"} />
-                    </li>
-                ))}
-            </ul> */}
+            {Object.entries(onegame).length && (
+                <>
+                    <h1>{onegame.name}</h1>
+                    <p>released : {onegame.released}</p>
+                    <p>Rating : {onegame.rating}</p>
+                    <h3>Genre(s):</h3>
+                    {onegame.genres.map(g => `${g.name} | `)}
+                    <h3>Plateform(s) :</h3>
+                    {onegame.platforms.map(p => `${p.platform.name} | `)}
+                </>
+            )}
         </div>
     );
 }
