@@ -10,7 +10,7 @@ export default function Game() {
     useEffect(() => {
         const fetchData3 = async () => {
             const result = await axios(
-                `https://api.rawg.io/api/games/${id}?key=678cfdbc0bb64f1fa15d4409fc3d8131`,
+                `https://api.rawg.io/api/games/${id}?key=3b9e3e45a7494082aabf45c1bf5f08fa`,
             );
             const dataweek = result.data;
             setonegame(dataweek);
