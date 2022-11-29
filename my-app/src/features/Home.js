@@ -3,9 +3,8 @@ import axios from "axios";
 import Newreleases from "./Newreleases";
 import Populargames from "./Populargames";
 import Nextweek from "./Nextweek";
-import Nav from "./Nav";
 import Results from "./Results";
-import Search from "./Search";
+import Title from "./Title";
 
 export default function Home() {
     function getNextMondaystart(date = new Date()) {
@@ -95,8 +94,8 @@ export default function Home() {
 
     return (
         <>
-            <Nav />
-            <Search returnResult={returnResult} />
+            {/* <Nav /> */}
+            <Title returnResult={returnResult} />
             {gameResults.length ? (
                 <Results gameResults={gameResults} />
             ) : (
