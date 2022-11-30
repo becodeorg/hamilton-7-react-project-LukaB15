@@ -10,6 +10,8 @@ const Inputtext = styled.input`
     padding-right: 80px;
     background-color: rgba(255, 255, 255, 0.6);
     transition: 0.3s;
+    font-family: gaming;
+    letter-spacing: 3px;
     ::placeholder {
         font-family: gaming;
         font-size: 18px;
