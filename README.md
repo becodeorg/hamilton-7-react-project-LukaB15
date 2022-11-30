@@ -1,7 +1,7 @@
 #  Games Website
  
 ## Link to the project ##
-[Game website](https://capable-faloodeh-a7a54b.netlify.app/)
+[Game website](https://stupendous-dasik-cdda65.netlify.app/)
 
 ## **Who did this project ?**
 
