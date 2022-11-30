@@ -4,18 +4,31 @@ import {Link, useParams} from "react-router-dom";
 import styled from "styled-components";
 import "./Game.css";
 
+const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: white;
+    width: 50%;
+`;
 const Titleegame = styled.h1`
     border-radius: 3px;
-    color: white;
+    color: #ff5400;
     font-family: gamingTitle2;
     font-size: 35px;
     margin-bottom: 60px;
+    margin-top: 60px;
     letter-spacing: 5px;
     text-align: center;
 `;
 const ReleaseDate = styled.p`
     border-radius: 3px;
-    color: white;
+    color: #004d90;
     font-family: gamingTitle2;
     font-size: 20px;
     margin-bottom: 60px;
@@ -24,7 +37,7 @@ const ReleaseDate = styled.p`
 `;
 const Rating = styled.p`
     border-radius: 3px;
-    color: white;
+    color: #004d90;
     font-family: gamingTitle2;
     font-size: 20px;
     margin-bottom: 60px;
@@ -33,19 +46,20 @@ const Rating = styled.p`
 `;
 const Genres = styled.h3`
     border-radius: 3px;
-    color: white;
+    color: #ff5400;
     font-family: gamingTitle2;
     font-size: 20px;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
     letter-spacing: 5px;
     text-align: center;
 `;
 const Plateforms = styled.h3`
     border-radius: 3px;
-    color: white;
+    color: #ff5400;
     font-family: gamingTitle2;
     font-size: 20px;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
+    margin-top: 20px;
     letter-spacing: 5px;
     text-align: center;
 `;
@@ -58,6 +72,7 @@ const GenresList = styled.div`
     color: white;
     font-family: "Sono", sans-serif;
     margin: 1px;
+    color: #004d90;
 `;
 const PlateformsList = styled.div`
     display: flex;
@@ -68,6 +83,7 @@ const PlateformsList = styled.div`
     color: white;
     font-family: "Sono", sans-serif;
     margin: 1px;
+    color: #004d90;
 `;
 const Pictures = styled.h3`
     border-radius: 3px;
@@ -91,11 +107,24 @@ const PicturesList = styled.div`
 const Back = styled.p`
     border-radius: 3px;
     color: white;
+    background-color: #004d90;
     font-family: gamingTitle2;
     font-size: 20px;
     margin-bottom: 60px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    width: 30%;
     letter-spacing: 5px;
     text-align: center;
+    transition: 0.3s;
+    &:hover {
+        color: #004d90;
+        background-color: white;
+        border: 1px solid #004d90;
+        transition: 0.3s;
+    }
 `;
 
 export default function Game() {
@@ -114,7 +143,7 @@ export default function Game() {
     }, []);
     // console.log(onegame.genres);
     return (
-        <div>
+        <Container>
             {Object.entries(onegame).length && (
                 <>
                     <Titleegame>{onegame.name}</Titleegame>
@@ -141,6 +170,6 @@ export default function Game() {
                     </Link>
                 </>
             )}
-        </div>
+        </Container>
     );
 }

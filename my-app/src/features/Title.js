@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Search from "./Search";
+import {Link} from "react-router-dom";
 import "./Title.css";
 
 const TitleApp = styled.h1`
@@ -16,7 +17,9 @@ const TitleApp = styled.h1`
 export default function Title({returnResult}) {
     return (
         <div className={"bck"}>
-            <TitleApp>Games Manager</TitleApp>
+            <Link className={"link"} to={{pathname: `/`}}>
+                <TitleApp>Games Manager</TitleApp>
+            </Link>
             <Search returnResult={returnResult} />
         </div>
     );

@@ -9,6 +9,7 @@ const Titresection = styled.h1`
     font-family: gamingTitle2;
     font-size: 35px;
     margin-bottom: 60px;
+    margin-top: 60px;
     letter-spacing: 5px;
     text-align: center;
 `;
@@ -81,6 +82,7 @@ const PlateformsList = styled.div`
     color: #004d90;
     font-family: "Sono", sans-serif;
     margin: 1px;
+    text-align: center;
 `;
 const GenresList = styled.div`
     display: flex;
@@ -89,6 +91,7 @@ const GenresList = styled.div`
     color: #004d90;
     font-family: "Sono", sans-serif;
     margin: 1px;
+    text-align: center;
 `;
 const Card = styled.div`
     background-color: white;

@@ -5,6 +5,8 @@ import Populargames from "./Populargames";
 import Nextweek from "./Nextweek";
 import Results from "./Results";
 import Title from "./Title";
+import Cut from "./Cut";
+import "./Home.css";
 
 export default function Home() {
     function getNextMondaystart(date = new Date()) {
@@ -86,7 +88,9 @@ export default function Home() {
         return (
             <>
                 <Nextweek nxtweek={nxtweek} />
+                <Cut />
                 <Newreleases data={data} />
+                <Cut />
                 <Populargames popular={popular} />
             </>
         );
@@ -94,7 +98,6 @@ export default function Home() {
 
     return (
         <>
-            {/* <Nav /> */}
             <Title returnResult={returnResult} />
             {gameResults.length ? (
                 <Results gameResults={gameResults} />
