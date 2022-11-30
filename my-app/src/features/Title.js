@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Search from "./Search";
-import {Link} from "react-router-dom";
+// import from "react-router-dom";
 // import Formfilter from "./Formfilter";
 import "./Title.css";
 
@@ -18,9 +18,9 @@ const TitleApp = styled.h1`
 export default function Title({returnResult}) {
     return (
         <div className={"bck"}>
-            <Link className={"link"} to={{pathname: `/`}}>
+            <a href={""}>
                 <TitleApp>Games Manager</TitleApp>
-            </Link>
+            </a>
             <Search returnResult={returnResult} />
             {/* <Link className={"link"} to={{pathname: `/Formfilter`}}>
                 <Formfilter />
